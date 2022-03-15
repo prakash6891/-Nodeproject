@@ -1,0 +1,19 @@
+{
+  "name": "expresswebproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jarvis 2.0",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "node-geocoder": "^4.0.0",
+    "path": "^0.12.7",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "devDependencies": {},
+  "description": ""
+}

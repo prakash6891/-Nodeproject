@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>header_link}}
+
+</head>
+<body>
+    {{>navbar}}
+
+
+
+<!----------  main header  ----->
+<dir class="container-fluid main_header">
+  <dir class="row">
+      <dir class="col-md-10 col-12 mx-auto">
+          <dir class="main_content">
+              <form class="temp_form">
+                  
+                  <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                  
+                  <input type="submit" value="search" id="submitBtn">
+                  
+              </form>
+              
+          </dir>
+          <dir class="tempInformation">1
+              <dir class="top_layer">
+                  <p id="day_name"> </p>
+                  <p id="time_slot"> </p>
+                  <p id="date_name" class="date_name"> </p>
+              </dir>
+            <dir class="main_layer">
+                <p id="city_name"> Get output shown here</p>
+                <dir class="middle_layer ">
+                    <p id="temp"><span id="tempData"> 0 </span> <sup>o</sup>C</p>
+                    <p id="weathercon"> <i class="fa fa-cloud" aria-hidden="true"></i></p>
+                </dir>
+            </dir>
+
+          </dir>
+      </dir>
+  </dir> 
+</dir>
+
+<!-------set code for current date & time------>
+
+<script>
+        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        let date = d.getDate();
+        let month_name = month[d.getMonth()];
+        let time_hour = d.getHours();
+        let time_minute = d.getMinutes();
+
+        let time_map ="";
+        if(time_hour > 12){
+            time_map ="PM";
+        }else{
+            time_map ="AM";
+        }
+        document.getElementById("day_name").innerHTML = day;
+        document.getElementById("date_name").innerHTML = date +" "+ month_name;
+        document.getElementById("time_slot").innerHTML = time_hour + ":" + time_minute +" "+time_map;
+</script>
+
+<script src="js/main.js"></script>
+{{>footer}}
+    
+</body>
+</html>
